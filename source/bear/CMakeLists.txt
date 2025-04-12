@@ -14,7 +14,8 @@ target_link_libraries(bear_a PUBLIC
         fmt::fmt
         citnames_a
         intercept_a
-        spdlog::spdlog)
+        spdlog::spdlog
+        stdc++fs)
 
 # Create an executable from the sub projects.
 add_executable(bear

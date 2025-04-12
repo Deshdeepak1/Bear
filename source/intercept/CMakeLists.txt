@@ -51,7 +51,8 @@ target_link_libraries(intercept_a PUBLIC
         rpc_a
         sys_a
         result_a
-        spdlog::spdlog)
+        spdlog::spdlog
+        stdc++fs)
 
 # Markdown file is the source to the man file. Please modify that and generate
 # the man file from it with pandoc.
@@ -82,7 +83,8 @@ target_link_libraries(wrapper_a PUBLIC
         result_a
         sys_a
         rpc_a
-        spdlog::spdlog)
+        spdlog::spdlog
+        stdc++fs)
 
 
 # Intercept report sender executable.
@@ -155,6 +157,7 @@ target_sources(exec_a PRIVATE
         source/report/libexec/Session.cc
         INTERFACE $<TARGET_OBJECTS:exec_a>)
 target_link_libraries(exec_a PUBLIC ${CMAKE_DL_LIBS} result_a)
+target_link_libraries(exec_a PUBLIC stdc++fs)
 set_target_properties(exec_a PROPERTIES
         LINKER_LANGUAGE "C"
         POSITION_INDEPENDENT_CODE 1)
